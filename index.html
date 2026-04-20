@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" style="overflow-x: hidden;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,11 +16,19 @@
     <!-- Project JS/CSS -->
     <script src="./js/tailwind-config.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="./css/styles.css?v=17">
+    <link rel="stylesheet" href="./css/styles.css?v=20">
     <script src="./js/main.js" defer></script>
 
     <!-- Critical overrides - Tailwind CDN may inject after styles.css -->
     <style>
+        @media (max-width: 1023px) {
+            .od-form-shell {
+                transform: none !important;
+                clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%) !important;
+            }
+            .od-form-inner { transform: none !important; padding: 20px 60px 28px !important; }
+        }
+
         @media (min-width: 1024px) and (max-width: 1920px) {
             .od-input           { height: 52px !important; font-size: 20px !important; padding: 6px 16px !important; }
             .od-degree-select   { height: 62px !important; font-size: 20px !important; padding: 6px 16px !important; }
@@ -31,57 +39,94 @@
         }
     </style>
 </head>
-<body class="od-page antialiased font-sans selection:bg-telhai-pink selection:text-black">
+<body class="od-page antialiased font-sans selection:bg-telhai-pink selection:text-black overflow-x-hidden">
     <div class="od-page-shell w-full max-w-[1780px] mx-auto">
 
     <!-- HERO SECTION -->
     <section class="od-hero-section relative flex flex-col lg:flex-row items-stretch w-full max-w-[1440px] mx-auto min-h-[85vh] overflow-hidden">
         
         <!-- Right Side: Text Content -->
-        <div class="od-hero-content w-full lg:w-[48%] pr-0 pl-6 pt-0 pb-12 lg:pr-6 lg:pl-10 lg:pt-0 xl:pr-8 xl:pl-16 flex flex-col justify-start relative z-10 min-w-0 overflow-hidden lg:overflow-visible">
+        <div class="od-hero-content w-full lg:w-[48%] pr-0 pl-0 pt-0 pb-12 lg:pr-6 lg:pl-10 lg:pt-0 xl:pr-8 xl:pl-16 flex flex-col justify-start relative z-10 min-w-0 overflow-visible order-2 lg:order-1">
             
             <!-- Logo area (Using Original Anima SVG) -->
-            <div class="od-hero-logo-wrap od-banner-bleed w-full flex items-center justify-start pt-2 lg:pt-4 xl:pt-4 mb-2 lg:mb-4">
-                <img src="https://c.animaapp.com/JP1S9gV3/img/34356-tel-hai-in-the-galilee-1.svg" alt="לוגו תל חי" class="od-hero-logo w-[251.938px] h-[72.806px] object-cover">
-            </div>
-
-            <!-- Headlines -->
-            <div class="od-hero-headline-wrap flex flex-col items-end text-right mt-0">
-                <h1 class="od-hero-title w-full text-right text-5xl md:text-6xl lg:text-[3rem] xl:text-[4.25rem] font-black leading-none mb-3 flex flex-nowrap whitespace-nowrap justify-start items-end gap-2 md:gap-4 min-w-0">
-                    <span class="od-hero-date tracking-tight">יום פתוח <span class="text-6xl md:text-7xl lg:text-[3.5rem] xl:text-[4.75rem]">28.5</span></span>
-                    <span class="od-hero-time text-3xl md:text-4xl lg:text-[1.75rem] xl:text-[2.25rem] font-normal mb-1 md:mb-2 tracking-wide text-gray-200">| 10:00-17:00</span>
-                </h1>
-                
-                <div class="od-hero-banner od-banner-bleed w-full bg-telhai-pink text-black text-xl md:text-2xl xl:text-3xl font-bold py-3 pl-6 pr-6 lg:pr-10 xl:pr-16 inline-block mb-10">
-                    יום פתוח של אוניברסיטה שונה בנוף
+            <div class="od-hero-logo-wrap w-full flex items-center justify-center lg:justify-start pt-0 lg:pt-4 xl:pt-4 mb-6 lg:mb-4 -mt-16 lg:mt-0 relative z-20 px-0">
+                <div class="bg-[#163323] px-10 py-5 lg:p-0 lg:bg-transparent inline-block">
+                    <img src="https://c.animaapp.com/JP1S9gV3/img/34356-tel-hai-in-the-galilee-1.svg" alt="לוגו תל חי" class="od-hero-logo w-[180px] lg:w-[251.938px] h-auto lg:h-[72.806px] object-cover">
                 </div>
             </div>
 
+            <!-- Headlines -->
+            <div class="od-hero-headline-wrap flex flex-col items-center lg:items-end text-center lg:text-right mt-0 px-4 lg:px-0">
+                <h1 class="od-hero-title w-full text-center lg:text-right text-5xl md:text-6xl lg:text-[3rem] xl:text-[4.25rem] font-black leading-none mb-3 flex flex-col lg:flex-row flex-nowrap whitespace-nowrap justify-center lg:justify-start items-center lg:items-end gap-2 md:gap-4 min-w-0">
+                    <span class="od-hero-date tracking-tight">יום פתוח <span class="text-6xl md:text-7xl lg:text-[3.5rem] xl:text-[4.75rem]">28.5</span></span>
+                    <span class="od-hero-time text-3xl md:text-4xl lg:text-[1.75rem] xl:text-[2.25rem] font-normal mb-1 md:mb-2 tracking-wide text-gray-200"><span class="hidden lg:inline">| </span>10:00-17:00</span>
+                </h1>
+            </div>
+
+            <div class="od-hero-banner w-full bg-telhai-pink text-black text-xl md:text-2xl xl:text-3xl font-bold py-3 px-4 lg:pl-6 lg:pr-10 xl:pr-16 block mb-10 text-center lg:text-right">
+                יום פתוח של אוניברסיטה שונה בנוף
+            </div>
+
             <!-- Paragraphs -->
-            <div class="od-hero-copy text-right max-w-lg ml-auto">
+            <div class="od-hero-copy text-right max-w-lg mx-auto lg:ml-auto lg:mr-0 px-4 lg:px-0">
                 <h2 class="od-hero-copy-title text-telhai-green text-3xl font-bold mb-4">ומה זה אומר?</h2>
                 <p class="od-hero-copy-paragraph text-lg mb-4 leading-relaxed font-light">
                     נגיד ש... שהמחקרים שלנו נעשים בסביבה הגלילית שלנו,
-                    <br>
+                    
                     סביבה שתיתן לכם אפשרויות מחקר שאין בשום מקום אחר.
                 </p>
                 <p class="od-hero-copy-paragraph text-lg mb-4 leading-relaxed font-light">
-                    שהמרצים שלנו יכירו אתכם בשם שלכם, שתרגישו את היחס
-                    <br>
-                    הכי אישי שיש, כן גם באוניברסיטה זה יכול להיות.
+                    שהמרצים שלנו יכירו אתכם בשם שלכם, שתרגישו את היחס הכי אישי שיש, כן גם באוניברסיטה זה יכול להיות.
                 </p>
                 <p class="od-hero-copy-paragraph text-lg leading-relaxed font-light">
                     שאתם לא הולכים ללמוד רק תואר, אתם אשכרה הולכים 
-                    <br>
+                    
                     ללמוד גם על עצמכם. <a href="#" class="read-more-link font-medium">קרא עוד...</a>
                 </p>
+            </div>
+
+            <!-- VIDEO (mobile only - appears above form) -->
+            <div class="block lg:hidden w-full relative aspect-[4/3] mt-8 mb-2">
+                <div class="od-video-card relative z-10 w-full h-full group cursor-pointer shadow-2xl overflow-hidden bg-gray-900 flex items-center justify-center">
+                    <img src="./images/hero-video-hand.png" alt="סרטון תדמית" class="absolute inset-0 w-full h-full object-cover z-10 opacity-90">
+                    <div class="absolute top-6 right-6 text-right pointer-events-none z-30">
+                        <p class="text-xl font-bold text-white drop-shadow-md">כל מה שחשבתם</p>
+                        <p class="text-xl font-bold text-white drop-shadow-md">על אוניברסיטה</p>
+                        <div class="leading-none mt-2">
+                            <p class="text-4xl font-black text-white drop-shadow-lg">הולך</p>
+                            <p class="text-4xl font-black text-white drop-shadow-lg">להשתנות</p>
+                        </div>
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center mt-12 z-40">
+                        <img src="https://c.animaapp.com/JP1S9gV3/img/polygon-1.svg" class="w-16 h-16 drop-shadow-2xl" alt="Play Video">
+                    </div>
+                </div>
+            </div>
+
+            <!-- BENEFITS GRID (mobile only - appears above form) -->
+            <div class="block lg:hidden w-full px-4 mt-10 mb-2">
+                <div class="grid grid-cols-3 gap-2">
+                    <div class="flex flex-col items-center text-center">
+                        <img src="https://c.animaapp.com/JP1S9gV3/img/frame-1000001191.svg" alt="מלגות הצטיינות" class="w-20 h-20 mb-4">
+                        <h4 class="font-bold text-[0.8rem] leading-tight w-full max-w-[120px]">מלגות הצטיינות*</h4>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <img src="https://c.animaapp.com/JP1S9gV3/img/frame-1000001190-1.svg" alt="שנה חינם" class="w-20 h-20 mb-4">
+                        <h4 class="font-bold text-[0.8rem] leading-tight w-full max-w-[120px]">שנה חינם ע"פ חוק חיילים משוחררים</h4>
+                    </div>
+                    <div class="flex flex-col items-center text-center">
+                        <img src="https://c.animaapp.com/JP1S9gV3/img/frame-1000001190.svg" alt="הזדמנות ללמוד" class="w-20 h-20 mb-4">
+                        <h4 class="font-bold text-[0.8rem] leading-tight w-full max-w-[120px]">הזדמנות ללמוד במקום הכי יפה בארץ.</h4>
+                    </div>
+                </div>
+                <p class="od-disclaimer text-lg font-light text-gray-300 text-center mt-4">*בכפוף לתקנון</p>
             </div>
 
             <!-- FORM SECTION -->
             <section class="od-form-section relative z-20 w-full mt-8 md:mt-10 lg:mt-32 xl:mt-40">
                 <!-- Rotated Container -->
-                <div class="od-form-shell w-full lg:w-[calc(100%+8rem)] lg:-left-[6rem] xl:w-[calc(100%+12rem)] xl:-left-[8rem] 2xl:w-[1082px] 2xl:-left-[14rem] lg:relative h-auto 2xl:h-[388px] max-w-none bg-telhai-green shadow-2xl transform -rotate-1 lg:-rotate-2 border border-black/5">
-                    <div class="od-form-inner p-4 lg:p-5 2xl:p-10 transform rotate-1 lg:rotate-2"> <!-- נגדי להטיה -->
+                <div class="od-form-shell w-full lg:w-[calc(100%+8rem)] lg:-left-[6rem] xl:w-[calc(100%+12rem)] xl:-left-[8rem] 2xl:w-[1082px] 2xl:-left-[14rem] lg:relative h-auto 2xl:h-[388px] max-w-none bg-telhai-green shadow-2xl lg:transform lg:-rotate-2 border border-black/5">
+                    <div class="od-form-inner p-4 lg:p-5 2xl:p-10 lg:transform lg:rotate-2"> <!-- נגדי להטיה -->
                         <h3 class="od-form-title text-black text-[18px] lg:text-[20px] 2xl:text-[43.2px] leading-[1.12] font-extrabold mb-3 2xl:mb-6 text-right">
                             לפרטים נוספים השאירו פרטים כאן:
                         </h3>
@@ -158,7 +203,7 @@
         </div>
 
         <!-- Left Side: Image Content (Using Original Anima Export) -->
-        <div class="od-hero-image-panel w-full lg:w-[52%] h-[40vh] lg:h-auto lg:min-h-full self-stretch relative bg-[#1B2F22]">
+        <div class="od-hero-image-panel w-full lg:w-[52%] h-[40vh] lg:h-auto lg:min-h-full self-stretch relative bg-[#1B2F22] order-1 lg:order-2">
             <img src="https://c.animaapp.com/JP1S9gV3/img/vector-17.png" 
                  alt="נוף גלילי עם ציפורים" 
                  class="od-hero-image absolute inset-0 w-full h-full object-cover z-0">
@@ -170,7 +215,7 @@
     <section class="od-features-video-section w-full max-w-[1780px] mx-auto px-4 md:px-8 lg:px-12 pt-20 lg:pt-32 pb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         
         <!-- Right Side (First in RTL): Video Thumbnail -->
-        <div class="od-video-column relative w-full max-w-[860px] justify-self-end aspect-[4/3] lg:aspect-[16/10] mt-10 lg:mt-0 order-2 lg:order-1">
+        <div class="od-video-column hidden lg:block relative w-full max-w-[860px] justify-self-end aspect-[4/3] lg:aspect-[16/10] mt-10 lg:mt-0 order-2 lg:order-1">
             <!-- Pink Square Background -->
             <div class="od-video-bg-square absolute -bottom-14 -left-14 md:-bottom-16 md:-left-16 lg:-bottom-20 lg:-left-20 w-52 h-52 md:w-72 md:h-68 lg:w-88 lg:h-80 bg-telhai-pink z-0"></div>
             
@@ -202,7 +247,7 @@
         <div class="od-benefits-column w-full max-w-[760px] justify-self-start flex flex-col h-full justify-center order-1 lg:order-2 lg:pr-8">
             
             <!-- Features Icons -->
-            <div class="od-benefits-grid grid grid-cols-3 gap-2 md:gap-10 mb-16">
+            <div class="od-benefits-grid hidden lg:grid grid-cols-3 gap-2 md:gap-10 mb-16">
                 
                 <!-- Icon 3: Scholarship (Anima SVG) -->
                 <div class="od-benefit-item od-benefit-item--scholarship flex flex-col items-center text-center">
@@ -231,7 +276,7 @@
 
             <!-- Disclaimer and Bottom Logo -->
             <div class="od-benefits-footer flex flex-col items-center gap-8 w-full text-center">
-                <p class="od-disclaimer text-2xl md:text-4xl font-light text-gray-300 self-center">*בכפוף לתקנון</p>
+                <p class="od-disclaimer hidden lg:block text-2xl md:text-4xl font-light text-gray-300 self-center">*בכפוף לתקנון</p>
                 
                 <!-- Bottom Logo (Using Original Anima SVG) -->
                 <div class="od-footer-logo-wrap flex items-center justify-center w-full">
