@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>יום פתוח תל-חי</title>
+    
+    <!-- Google Fonts: Heebo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for spinner icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Project JS/CSS -->
+    <script src="./js/tailwind-config.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/styles.css?v=17">
+    <script src="./js/main.js" defer></script>
+
+    <!-- Critical overrides - Tailwind CDN may inject after styles.css -->
+    <style>
+        @media (min-width: 1024px) and (max-width: 1920px) {
+            .od-input           { height: 52px !important; font-size: 20px !important; padding: 6px 16px !important; }
+            .od-degree-select   { height: 62px !important; font-size: 20px !important; padding: 6px 16px !important; }
+            .od-submit-button   { height: 62px !important; font-size: 24px !important; }
+            .od-form-shell      { height: auto !important; }
+            .od-form-title      { font-size: 34px !important; margin-bottom: 20px !important; }
+            .od-form-inner      { padding: 32px 80px 64px !important; }
+        }
+    </style>
+</head>
+<body class="od-page antialiased font-sans selection:bg-telhai-pink selection:text-black">
+    <div class="od-page-shell w-full max-w-[1780px] mx-auto">
+
+    <!-- HERO SECTION -->
+    <section class="od-hero-section relative flex flex-col lg:flex-row items-stretch w-full max-w-[1440px] mx-auto min-h-[85vh] overflow-hidden">
+        
+        <!-- Right Side: Text Content -->
+        <div class="od-hero-content w-full lg:w-[48%] pr-0 pl-6 pt-0 pb-12 lg:pr-6 lg:pl-10 lg:pt-0 xl:pr-8 xl:pl-16 flex flex-col justify-start relative z-10 min-w-0 overflow-hidden lg:overflow-visible">
+            
+            <!-- Logo area (Using Original Anima SVG) -->
+            <div class="od-hero-logo-wrap od-banner-bleed w-full flex items-center justify-start pt-2 lg:pt-4 xl:pt-4 mb-2 lg:mb-4">
+                <img src="https://c.animaapp.com/JP1S9gV3/img/34356-tel-hai-in-the-galilee-1.svg" alt="לוגו תל חי" class="od-hero-logo w-[251.938px] h-[72.806px] object-cover">
+            </div>
+
+            <!-- Headlines -->
+            <div class="od-hero-headline-wrap flex flex-col items-end text-right mt-0">
+                <h1 class="od-hero-title w-full text-right text-5xl md:text-6xl lg:text-[3rem] xl:text-[4.25rem] font-black leading-none mb-3 flex flex-nowrap whitespace-nowrap justify-start items-end gap-2 md:gap-4 min-w-0">
+                    <span class="od-hero-date tracking-tight">יום פתוח <span class="text-6xl md:text-7xl lg:text-[3.5rem] xl:text-[4.75rem]">28.5</span></span>
+                    <span class="od-hero-time text-3xl md:text-4xl lg:text-[1.75rem] xl:text-[2.25rem] font-normal mb-1 md:mb-2 tracking-wide text-gray-200">| 10:00-17:00</span>
+                </h1>
+                
+                <div class="od-hero-banner od-banner-bleed w-full bg-telhai-pink text-black text-xl md:text-2xl xl:text-3xl font-bold py-3 pl-6 pr-6 lg:pr-10 xl:pr-16 inline-block mb-10">
+                    יום פתוח של אוניברסיטה שונה בנוף
+                </div>
+            </div>
+
+            <!-- Paragraphs -->
+            <div class="od-hero-copy text-right max-w-lg ml-auto">
+                <h2 class="od-hero-copy-title text-telhai-green text-3xl font-bold mb-4">ומה זה אומר?</h2>
+                <p class="od-hero-copy-paragraph text-lg mb-4 leading-relaxed font-light">
+                    נגיד ש... שהמחקרים שלנו נעשים בסביבה הגלילית שלנו,
+                    <br>
+                    סביבה שתיתן לכם אפשרויות מחקר שאין בשום מקום אחר.
+                </p>
+                <p class="od-hero-copy-paragraph text-lg mb-4 leading-relaxed font-light">
+                    שהמרצים שלנו יכירו אתכם בשם שלכם, שתרגישו את היחס
+                    <br>
+                    הכי אישי שיש, כן גם באוניברסיטה זה יכול להיות.
+                </p>
+                <p class="od-hero-copy-paragraph text-lg leading-relaxed font-light">
+                    שאתם לא הולכים ללמוד רק תואר, אתם אשכרה הולכים 
+                    <br>
+                    ללמוד גם על עצמכם. <a href="#" class="read-more-link font-medium">קרא עוד...</a>
+                </p>
+            </div>
+
+            <!-- FORM SECTION -->
+            <section class="od-form-section relative z-20 w-full mt-8 md:mt-10 lg:mt-32 xl:mt-40">
+                <!-- Rotated Container -->
+                <div class="od-form-shell w-full lg:w-[calc(100%+8rem)] lg:-left-[6rem] xl:w-[calc(100%+12rem)] xl:-left-[8rem] 2xl:w-[1082px] 2xl:-left-[14rem] lg:relative h-auto 2xl:h-[388px] max-w-none bg-telhai-green shadow-2xl transform -rotate-1 lg:-rotate-2 border border-black/5">
+                    <div class="od-form-inner p-4 lg:p-5 2xl:p-10 transform rotate-1 lg:rotate-2"> <!-- נגדי להטיה -->
+                        <h3 class="od-form-title text-black text-[18px] lg:text-[20px] 2xl:text-[43.2px] leading-[1.12] font-extrabold mb-3 2xl:mb-6 text-right">
+                            לפרטים נוספים השאירו פרטים כאן:
+                        </h3>
+                        
+                        <form id="leadForm" class="od-lead-form space-y-2 2xl:space-y-4">
+                            <!-- Top Row: Inputs (סודר מימין לשמאל: שם -> טלפון -> מייל) -->
+                            <div class="od-form-input-row grid grid-cols-1 md:grid-cols-3 gap-2 2xl:gap-[14.41px]">
+                                <input type="text" id="fullName" required placeholder="שם מלא *" class="od-input od-input-fullname w-full h-[42px] 2xl:h-[74px] bg-white text-black text-[13px] lg:text-[14px] 2xl:text-[28.8px] px-3 2xl:px-[21.62px] text-right focus:outline-none focus:ring-2 focus:ring-[#6E7CFA] transition-shadow placeholder-gray-400 border border-transparent">
+                                <input type="tel" id="phone" required placeholder="טלפון *" class="od-input od-input-phone w-full h-[42px] 2xl:h-[74px] bg-white text-black text-[13px] lg:text-[14px] 2xl:text-[28.8px] px-3 2xl:px-[21.62px] text-right focus:outline-none focus:ring-2 focus:ring-[#6E7CFA] transition-shadow placeholder-gray-400 border border-transparent">
+                                <input type="email" id="email" required placeholder="מייל *" class="od-input od-input-email w-full h-[42px] 2xl:h-[74px] bg-white text-black text-[13px] lg:text-[14px] 2xl:text-[28.8px] px-3 2xl:px-[21.62px] text-right focus:outline-none focus:ring-2 focus:ring-[#6E7CFA] transition-shadow placeholder-gray-400 border border-transparent">
+                            </div>
+                            
+                            <!-- Bottom Row: Select & Button -->
+                            <div class="od-form-action-row grid grid-cols-1 md:grid-cols-3 gap-2 2xl:gap-[21.62px] items-center">
+                                <div class="od-degree-wrap md:col-span-2 relative h-full">
+                                    <select id="degree" class="od-degree-select w-full h-[46px] 2xl:h-[82px] bg-white text-gray-500 text-[13px] lg:text-[14px] 2xl:text-[28.8px] px-3 2xl:px-[21.62px] pl-7 2xl:pl-12 text-right focus:outline-none focus:ring-2 focus:ring-[#6E7CFA] transition-shadow cursor-pointer border border-transparent">
+                                        <option value="61" selected>אני מתעניין בתואר</option>
+                                        <option value="254">B.sc בביואינפורמטיקה</option>
+                                        <option value="17">B.sc בביוטכנולוגיה</option>
+                                        <option value="153">B.sc בביוטכנולוגיה קדם רפואה</option>
+                                        <option value="14">B.sc במדעי התזונה</option>
+                                        <option value="15">B.sc במדעי המזון</option>
+                                        <option value="16">B.sc במדעי הסביבה</option>
+                                        <option value="18">B.sc במדעי המחשב</option>
+                                        <option value="62">B.sc במדעי החי</option>
+                                        <option value="324">.B.Sc במדעי הספורט*</option>
+                                        <option value="1">B.A. בשירותי אנוש</option>
+                                        <option value="8">B.A. בפסיכולוגיה</option>
+                                        <option value="88">B.A. בלימודי מזרח אסיה</option>
+                                        <option value="2">B.A. בעבודה סוציאלית</option>
+                                        <option value="3">B.A. בכלכלה וניהול</option>
+                                        <option value="5">B.A. בלימודים רב-תחומיים</option>
+                                        <option value="10">B.A. בחינוך</option>
+                                        <option value="12">מסלולי לימוד לאנשים עובדים</option>
+                                        <option value="224">לימודי הוראה</option>
+                                        <option value="226">M.A. בהתנהגות ארגונית</option>
+                                        <option value="234">M.A. בפסיכולוגיה התפתחותית</option>
+                                        <option value="9">M.A. בעבודה סוציאלית</option>
+                                        <option value="19">M.sc מוסמך ביוטכנולוגיה</option>
+                                        <option value="89">M.sc בלימודי גליל</option>
+                                        <option value="91">M.A. בדרמה תרפיה</option>
+                                        <option value="94">M.sc במדעי התזונה</option>
+                                        <option value="143">M.A. בפסיכולוגיה חינוכית</option>
+                                        <option value="151">M.A. בחינוך</option>
+                                        <option value="157">M.sc במדעי המים</option>
+                                        <option value="170">M.A. בטיפול באמצעות אמנויות – טיפול באמנות</option>
+                                        <option value="207">M.A. בעבודה סוציאלית לבעלי תואר</option>
+                                        <option value="220">M.A. בבניהול וכלכלה*</option>
+                                        <option value="96">מכינה קדם אקדמית</option>
+                                        <option value="134">מכינת חממ"ה ללקויי למידה</option>
+                                        <option value="79">המכון לאמנויות - השילוב האקדמי</option>
+                                        <option value="81">המכון לאמנויות - לימודי תעודה</option>
+                                        <option value="106">קורסי חוץ באמנות</option>
+                                        <option value="323">קיימות</option>
+                                        <option value="129">חוג למדעי החקלאות ואגריטק</option>
+                                    </select>
+                                    <div class="od-degree-caret absolute left-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
+                                        <img src="https://c.animaapp.com/JP1S9gV3/img/caretdown.svg" class="od-degree-caret-icon w-4 h-4" alt="Dropdown">
+                                    </div>
+                                </div>
+
+                                <button type="submit" id="submitBtn" class="od-submit-button md:col-span-1 w-full h-[46px] 2xl:h-[82px] bg-[#6E7CFA] hover:bg-blue-600 text-white font-bold text-[14px] lg:text-[15px] 2xl:text-[43.2px] transition-colors flex justify-center items-center gap-2 2xl:gap-[14.41px] disabled:opacity-70 disabled:cursor-not-allowed">
+                                    <img src="https://c.animaapp.com/JP1S9gV3/img/paperplaneright.svg" id="btnIcon" class="od-submit-icon w-4 h-4 2xl:w-[36.03px] 2xl:h-[36.03px] relative top-[2px]" alt="שליחה">
+                                    <i class="od-submit-spinner fa-solid fa-spinner fa-spin text-xl relative top-[2px] hidden" id="loadingIcon"></i>
+                                    <span id="btnText" class="od-submit-text">שליחה</span>
+                                </button>
+                            </div>
+
+                            <div id="formMessage" class="od-form-feedback hidden text-center font-bold text-lg p-3 rounded mt-4"></div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Left Side: Image Content (Using Original Anima Export) -->
+        <div class="od-hero-image-panel w-full lg:w-[52%] h-[40vh] lg:h-auto lg:min-h-full self-stretch relative bg-[#1B2F22]">
+            <img src="https://c.animaapp.com/JP1S9gV3/img/vector-17.png" 
+                 alt="נוף גלילי עם ציפורים" 
+                 class="od-hero-image absolute inset-0 w-full h-full object-cover z-0">
+        </div>
+
+    </section>
+
+    <!-- FEATURES & VIDEO SECTION -->
+    <section class="od-features-video-section w-full max-w-[1780px] mx-auto px-4 md:px-8 lg:px-12 pt-20 lg:pt-32 pb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        
+        <!-- Right Side (First in RTL): Video Thumbnail -->
+        <div class="od-video-column relative w-full max-w-[860px] justify-self-end aspect-[4/3] lg:aspect-[16/10] mt-10 lg:mt-0 order-2 lg:order-1">
+            <!-- Pink Square Background -->
+            <div class="od-video-bg-square absolute -bottom-14 -left-14 md:-bottom-16 md:-left-16 lg:-bottom-20 lg:-left-20 w-52 h-52 md:w-72 md:h-68 lg:w-88 lg:h-80 bg-telhai-pink z-0"></div>
+            
+            <!-- Video Container -->
+            <div class="od-video-card relative z-10 w-full h-full group cursor-pointer shadow-2xl overflow-hidden bg-gray-900 flex items-center justify-center">
+                <!-- Anima Original Video Background (Robot Hand) -->
+                <img src="./images/hero-video-hand.png" 
+                     alt="סרטון תדמית" 
+                     class="od-video-image absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 z-10 opacity-90">
+                
+                <!-- Typographic Overlay Top Right -->
+                <div class="od-video-overlay absolute top-6 right-6 md:top-8 md:right-8 text-right pointer-events-none z-30">
+                    <p class="text-xl md:text-2xl font-bold text-white drop-shadow-md">כל מה שחשבתם</p>
+                    <p class="text-xl md:text-2xl font-bold text-white drop-shadow-md">על אוניברסיטה</p>
+                    <div class="leading-none mt-2">
+                        <p class="text-4xl md:text-5xl lg:text-6xl font-black text-white drop-shadow-lg">הולך</p>
+                        <p class="text-4xl md:text-5xl lg:text-6xl font-black text-white drop-shadow-lg">להשתנות</p>
+                    </div>
+                </div>
+
+                <!-- Anima Original Play Button Polygon -->
+                <div class="od-video-play-wrap absolute inset-0 flex items-center justify-center mt-12 md:mt-20 z-40 transition-transform duration-300 group-hover:scale-110">
+                    <img src="https://c.animaapp.com/JP1S9gV3/img/polygon-1.svg" class="od-video-play-icon w-16 h-16 md:w-20 md:h-20 drop-shadow-2xl" alt="Play Video">
+                </div>
+            </div>
+        </div>
+
+        <!-- Left Side (Second in RTL): Icons & Logo -->
+        <div class="od-benefits-column w-full max-w-[760px] justify-self-start flex flex-col h-full justify-center order-1 lg:order-2 lg:pr-8">
+            
+            <!-- Features Icons -->
+            <div class="od-benefits-grid grid grid-cols-3 gap-2 md:gap-10 mb-16">
+                
+                <!-- Icon 3: Scholarship (Anima SVG) -->
+                <div class="od-benefit-item od-benefit-item--scholarship flex flex-col items-center text-center">
+                    <img src="https://c.animaapp.com/JP1S9gV3/img/frame-1000001191.svg" alt="מלגות הצטיינות" class="od-benefit-icon w-20 h-20 md:w-28 md:h-28 mb-4 hover:-translate-y-2 transition-transform">
+                    <h4 class="od-benefit-text font-bold text-[0.8rem] md:text-lg leading-tight w-full max-w-[120px] md:max-w-[140px]">
+                        מלגות הצטיינות*
+                    </h4>
+                </div>
+
+                <!-- Icon 2: Money/Coins (Anima SVG) -->
+                <div class="od-benefit-item od-benefit-item--free-year flex flex-col items-center text-center">
+                    <img src="https://c.animaapp.com/JP1S9gV3/img/frame-1000001190-1.svg" alt="שנה חינם" class="od-benefit-icon w-20 h-20 md:w-28 md:h-28 mb-4 hover:-translate-y-2 transition-transform">
+                    <h4 class="od-benefit-text font-bold text-[0.8rem] md:text-lg leading-tight w-full max-w-[120px] md:max-w-[140px]">
+                        שנה חינם ע"פ חוק חיילים משוחררים
+                    </h4>
+                </div>
+
+                <!-- Icon 1: Nature (Anima SVG) -->
+                <div class="od-benefit-item od-benefit-item--nature flex flex-col items-center text-center">
+                    <img src="https://c.animaapp.com/JP1S9gV3/img/frame-1000001190.svg" alt="הזדמנות ללמוד" class="od-benefit-icon w-20 h-20 md:w-28 md:h-28 mb-4 hover:-translate-y-2 transition-transform">
+                    <h4 class="od-benefit-text font-bold text-[0.8rem] md:text-lg leading-tight w-full max-w-[120px] md:max-w-[140px]">
+                        הזדמנות ללמוד במקום הכי יפה בארץ.
+                    </h4>
+                </div>
+            </div>
+
+            <!-- Disclaimer and Bottom Logo -->
+            <div class="od-benefits-footer flex flex-col items-center gap-8 w-full text-center">
+                <p class="od-disclaimer text-2xl md:text-4xl font-light text-gray-300 self-center">*בכפוף לתקנון</p>
+                
+                <!-- Bottom Logo (Using Original Anima SVG) -->
+                <div class="od-footer-logo-wrap flex items-center justify-center w-full">
+                    <img src="https://c.animaapp.com/JP1S9gV3/img/34356-tel-hai-in-the-galilee-2.svg" alt="לוגו תל חי" class="od-footer-logo h-20 md:h-28 object-contain opacity-90 hover:opacity-100 transition-opacity">
+                </div>
+            </div>
+
+        </div>
+        
+    </section>
+    </div>
+
+</body>
+</html>

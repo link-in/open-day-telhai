@@ -1,0 +1,158 @@
+html,
+body,
+body *,
+input,
+select,
+button,
+textarea {
+    font-family: 'Heebo', sans-serif !important;
+}
+
+body {
+    background-color: #163323;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.bg-telhai-green {
+    background-color: #7CEE96;
+}
+
+.bg-telhai-pink {
+    background-color: #EEA2B5;
+}
+
+.text-telhai-green {
+    color: #7CEE96;
+}
+
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.read-more-link {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.3s;
+}
+
+.read-more-link:hover {
+    color: #7CEE96;
+}
+
+.od-hero-banner {
+    /* Match Anima's non-rectangular pink strip (rectangle-88.svg) */
+    clip-path: polygon(0 11.7%, 100% 0, 100% 99.7%, 0 86.4%);
+}
+
+/* Banner bleeds out to the right edge */
+.od-banner-bleed {
+    position: relative;
+}
+
+@media (min-width: 1024px) {
+    .od-banner-bleed {
+        width: calc(100% + 1.5rem);
+        right: -1.5rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .od-banner-bleed {
+        width: calc(100% + 2rem);
+        right: -2rem;
+    }
+}
+
+.od-video-bg-square {
+    /* Match provided SVG shape (311x287) */
+    clip-path: polygon(100% 10.71%, 0 0, 0 100%, 100% 85.73%);
+}
+
+.od-video-card {
+    /* Straight diagonal top edge like design */
+    clip-path: polygon(0 0, 100% 6%, 100% 100%, 0 100%);
+}
+
+.od-input,
+.od-degree-select {
+    box-sizing: border-box;
+    background: #fff;
+    text-align: right;
+    color: #163323;
+}
+
+/* ── לפטופ: 1024px – 1920px ── */
+@media (min-width: 1024px) and (max-width: 1920px) {
+    .od-form-shell {
+        height: auto !important;
+    }
+    .od-form-inner {
+        padding: 32px 80px 64px !important;
+    }
+    .od-form-title {
+        font-size: 34px !important;
+        margin-bottom: 20px !important;
+    }
+    .od-input {
+        height: 52px !important;
+        font-size: 20px !important;
+        padding: 6px 16px !important;
+    }
+    .od-degree-select {
+        height: 62px !important;
+        font-size: 20px !important;
+        padding: 6px 16px !important;
+    }
+    .od-submit-button {
+        height: 62px !important;
+        font-size: 24px !important;
+    }
+    .od-form-inner {
+        padding: 16px 20px 28px !important;
+    }
+    .od-submit-icon {
+        width: 14px !important;
+        height: 14px !important;
+    }
+    .od-form-input-row,
+    .od-form-action-row {
+        gap: 8px !important;
+    }
+}
+
+/* ── מסכים גדולים: 1280px+ ── */
+@media (min-width: 1536px) {
+    .od-input,
+    .od-degree-select {
+        padding: 21.618px !important;
+    }
+    .od-input {
+        height: 74px !important;
+        font-size: 28.8px !important;
+    }
+    .od-degree-select {
+        height: 82px !important;
+        font-size: 28.8px !important;
+    }
+    .od-submit-button {
+        height: 82px !important;
+        font-size: 43.2px !important;
+    }
+    .od-submit-icon {
+        width: 36.03px !important;
+        height: 36.03px !important;
+    }
+}
+
+.od-input::placeholder,
+.od-degree-select {
+    color: rgba(22, 51, 35, 0.3);
+}
+
+.od-input:focus,
+.od-degree-select:focus {
+    box-shadow: 0 0 0 2px #6e7cfa;
+}
