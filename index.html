@@ -24,7 +24,20 @@
         @media (max-width: 1023px) {
             .od-form-shell {
                 transform: none !important;
-                clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%) !important;
+                width: 100% !important;
+                margin-left: 0 !important;
+                clip-path: polygon(0 3%, 100% 0%, 100% 97%, 0% 100%) !important;
+            }
+            .od-form-inner {
+                transform: none !important;
+                padding-top: 20px !important;
+                padding-bottom: 20px !important;
+            }
+            .od-hero-section {
+                overflow: visible !important;
+            }
+            .od-hero-image-panel {
+                clip-path: polygon(0 0, 100% 0, 100% 82%, 0 100%);
             }
             .od-form-inner { transform: none !important; padding: 20px 60px 28px !important; }
         }
@@ -50,7 +63,7 @@
             
             <!-- Logo area (Using Original Anima SVG) -->
             <div class="od-hero-logo-wrap w-full flex items-center justify-center lg:justify-start pt-0 lg:pt-4 xl:pt-4 mb-6 lg:mb-4 -mt-16 lg:mt-0 relative z-20 px-0">
-                <div class="bg-[#163323] px-10 py-5 lg:p-0 lg:bg-transparent inline-block">
+                    <div class="bg-[#163323] p-0 lg:bg-transparent inline-block">
                     <img src="https://c.animaapp.com/JP1S9gV3/img/34356-tel-hai-in-the-galilee-1.svg" alt="לוגו תל חי" class="od-hero-logo w-[180px] lg:w-[251.938px] h-auto lg:h-[72.806px] object-cover">
                 </div>
             </div>
@@ -68,26 +81,35 @@
             </div>
 
             <!-- Paragraphs -->
-            <div class="od-hero-copy text-right max-w-lg mx-auto lg:ml-auto lg:mr-0 px-4 lg:px-0">
-                <h2 class="od-hero-copy-title text-telhai-green text-3xl font-bold mb-4">ומה זה אומר?</h2>
+            <div class="od-hero-copy text-right max-w-lg mx-auto lg:ml-auto lg:mr-0 px-4 lg:px-0 relative z-30">
+                <h2 class="od-hero-copy-title text-telhai-green text-3xl font-bold mb-4">ומה זה אומר? נגיד ש...</h2>
                 <p class="od-hero-copy-paragraph text-lg mb-4 leading-relaxed font-light">
-                    נגיד ש... שהמחקרים שלנו נעשים בסביבה הגלילית שלנו,
-                    
-                    סביבה שתיתן לכם אפשרויות מחקר שאין בשום מקום אחר.
+                    שהמחקרים שלנו נעשים בסביבה הגלילית שלנו, סביבה שתיתן לכם אפשרויות מחקר שאין בשום מקום אחר.
                 </p>
                 <p class="od-hero-copy-paragraph text-lg mb-4 leading-relaxed font-light">
                     שהמרצים שלנו יכירו אתכם בשם שלכם, שתרגישו את היחס הכי אישי שיש, כן גם באוניברסיטה זה יכול להיות.
                 </p>
-                <p class="od-hero-copy-paragraph text-lg leading-relaxed font-light">
-                    שאתם לא הולכים ללמוד רק תואר, אתם אשכרה הולכים 
-                    
-                    ללמוד גם על עצמכם. <a href="#" class="read-more-link font-medium">קרא עוד...</a>
+                <p class="od-hero-copy-paragraph text-lg mb-4 leading-relaxed font-light">
+                    שאתם לא הולכים ללמוד רק תואר, אתם אשכרה הולכים ללמוד גם על עצמכם.
                 </p>
+                <a href="#" id="readMoreBtn" class="read-more-link font-medium text-lg">קרא עוד...</a>
+
+                <div id="readMoreContent" class="overflow-hidden transition-all duration-500 ease-in-out rounded-sm" style="max-height:0; opacity:0; background-color:#163323;">
+                    <p class="od-hero-copy-paragraph text-lg mb-4 leading-relaxed font-light mt-4">
+                        שהסטודנטים שתפגשו ממש כמוכם, התרחקו מהבית לגליל הקסום שלנו, מה שאומר שתיצרו המון קשרים חדשים.
+                    </p>
+                    <p class="od-hero-copy-paragraph text-lg mb-4 leading-relaxed font-light">
+                        וזה אומר עוד המון דברים שנשאיר ליום הפתוח (בואו, צריך להשאיר משהו גם לשם)
+                    </p>
+                    <p class="od-hero-copy-paragraph text-lg leading-relaxed font-light">
+                        אה, וההסעות לגמרי עלינו, אתם רק תפנו מקום בלו"ז.
+                    </p>
+                </div>
             </div>
 
             <!-- VIDEO (mobile only - appears above form) -->
             <div class="block lg:hidden w-full relative aspect-[4/3] mt-8 mb-2">
-                <div class="od-video-card relative z-10 w-full h-full group cursor-pointer shadow-2xl overflow-hidden bg-gray-900 flex items-center justify-center">
+                <div class="od-video-card relative z-10 w-full h-full group cursor-pointer shadow-2xl overflow-hidden bg-gray-900 flex items-center justify-center" data-youtube-id="RJ6v21_pb4A">
                     <img src="./images/hero-video-hand.png" alt="סרטון תדמית" class="absolute inset-0 w-full h-full object-cover z-10 opacity-90">
                     <div class="absolute top-6 right-6 text-right pointer-events-none z-30">
                         <p class="text-xl font-bold text-white drop-shadow-md">כל מה שחשבתם</p>
@@ -123,7 +145,7 @@
             </div>
 
             <!-- FORM SECTION -->
-            <section class="od-form-section relative z-20 w-full mt-8 md:mt-10 lg:mt-32 xl:mt-40">
+            <section class="od-form-section relative z-20 w-full mt-8 md:mt-10 lg:mt-0 xl:mt-0">
                 <!-- Rotated Container -->
                 <div class="od-form-shell w-full lg:w-[calc(100%+8rem)] lg:-left-[6rem] xl:w-[calc(100%+12rem)] xl:-left-[8rem] 2xl:w-[1082px] 2xl:-left-[14rem] lg:relative h-auto 2xl:h-[388px] max-w-none bg-telhai-green shadow-2xl lg:transform lg:-rotate-2 border border-black/5">
                     <div class="od-form-inner p-4 lg:p-5 2xl:p-10 lg:transform lg:rotate-2"> <!-- נגדי להטיה -->
@@ -190,7 +212,10 @@
 
                                 <button type="submit" id="submitBtn" class="od-submit-button md:col-span-1 w-full h-[46px] 2xl:h-[82px] bg-[#6E7CFA] hover:bg-blue-600 text-white font-bold text-[14px] lg:text-[15px] 2xl:text-[43.2px] transition-colors flex justify-center items-center gap-2 2xl:gap-[14.41px] disabled:opacity-70 disabled:cursor-not-allowed">
                                     <img src="https://c.animaapp.com/JP1S9gV3/img/paperplaneright.svg" id="btnIcon" class="od-submit-icon w-4 h-4 2xl:w-[36.03px] 2xl:h-[36.03px] relative top-[2px]" alt="שליחה">
-                                    <i class="od-submit-spinner fa-solid fa-spinner fa-spin text-xl relative top-[2px] hidden" id="loadingIcon"></i>
+                                    <svg id="loadingIcon" class="hidden animate-spin w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+                                    </svg>
                                     <span id="btnText" class="od-submit-text">שליחה</span>
                                 </button>
                             </div>
@@ -203,7 +228,7 @@
         </div>
 
         <!-- Left Side: Image Content (Using Original Anima Export) -->
-        <div class="od-hero-image-panel w-full lg:w-[52%] h-[40vh] lg:h-auto lg:min-h-full self-stretch relative bg-[#1B2F22] order-1 lg:order-2">
+        <div class="od-hero-image-panel w-full lg:w-[52%] h-[30vh] lg:h-[82vh] lg:min-h-0 self-stretch relative bg-[#1B2F22] order-1 lg:order-2">
             <img src="https://c.animaapp.com/JP1S9gV3/img/vector-17.png" 
                  alt="נוף גלילי עם ציפורים" 
                  class="od-hero-image absolute inset-0 w-full h-full object-cover z-0">
@@ -212,7 +237,7 @@
     </section>
 
     <!-- FEATURES & VIDEO SECTION -->
-    <section class="od-features-video-section w-full max-w-[1780px] mx-auto px-4 md:px-8 lg:px-12 pt-20 lg:pt-32 pb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+    <section class="od-features-video-section w-full max-w-[1780px] mx-auto px-4 md:px-8 lg:px-12 pt-0 lg:pt-32 pb-0 lg:pb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         
         <!-- Right Side (First in RTL): Video Thumbnail -->
         <div class="od-video-column hidden lg:block relative w-full max-w-[860px] justify-self-end aspect-[4/3] lg:aspect-[16/10] mt-10 lg:mt-0 order-2 lg:order-1">
@@ -220,7 +245,7 @@
             <div class="od-video-bg-square absolute -bottom-14 -left-14 md:-bottom-16 md:-left-16 lg:-bottom-20 lg:-left-20 w-52 h-52 md:w-72 md:h-68 lg:w-88 lg:h-80 bg-telhai-pink z-0"></div>
             
             <!-- Video Container -->
-            <div class="od-video-card relative z-10 w-full h-full group cursor-pointer shadow-2xl overflow-hidden bg-gray-900 flex items-center justify-center">
+            <div class="od-video-card relative z-10 w-full h-full group cursor-pointer shadow-2xl overflow-hidden bg-gray-900 flex items-center justify-center" data-youtube-id="RJ6v21_pb4A">
                 <!-- Anima Original Video Background (Robot Hand) -->
                 <img src="./images/hero-video-hand.png" 
                      alt="סרטון תדמית" 

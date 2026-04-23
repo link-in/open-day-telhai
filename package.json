@@ -1,0 +1,11 @@
+{
+  "name": "open-day",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node local-server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
+}

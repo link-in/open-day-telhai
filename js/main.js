@@ -25,6 +25,30 @@ document.addEventListener('DOMContentLoaded', () => {
     applyFormHeights();
     window.addEventListener('resize', applyFormHeights);
 
+    const readMoreBtn     = document.getElementById('readMoreBtn');
+    const readMoreContent = document.getElementById('readMoreContent');
+    if (readMoreBtn && readMoreContent) {
+        readMoreBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            readMoreContent.style.maxHeight = readMoreContent.scrollHeight + 'px';
+            readMoreContent.style.opacity   = '1';
+            readMoreBtn.style.display       = 'none';
+        });
+    }
+
+    document.querySelectorAll('.od-video-card[data-youtube-id]').forEach(card => {
+        card.addEventListener('click', () => {
+            const videoId = card.dataset.youtubeId;
+            card.innerHTML = `<iframe
+                class="absolute inset-0 w-full h-full"
+                src="https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&modestbranding=1"
+                frameborder="0"
+                allow="autoplay; encrypted-media; fullscreen"
+                allowfullscreen>
+            </iframe>`;
+        });
+    });
+
     const leadForm = document.getElementById('leadForm');
     if (!leadForm) return;
 
@@ -38,10 +62,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const messageDiv = document.getElementById('formMessage');
 
         const formData = {
-            fullName: document.getElementById('fullName').value,
-            phone: document.getElementById('phone').value,
-            email: document.getElementById('email').value,
-            department: document.getElementById('degree').value || "61",
+            fullName:   document.getElementById('fullName').value.trim(),
+            phone:      document.getElementById('phone').value.trim(),
+            email:      document.getElementById('email').value.trim(),
+            department: document.getElementById('degree').value || '61',
         };
 
         submitBtn.disabled = true;
@@ -51,18 +75,15 @@ document.addEventListener('DOMContentLoaded', () => {
         messageDiv.classList.add('hidden');
 
         try {
-            const API_URL = 'https://your-erp-system.com/api/leads';
+            const API_URL = '/api/submit';
 
-            /*
             const response = await fetch(API_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
+                body: JSON.stringify(formData),
             });
-            if (!response.ok) throw new Error('Server error');
-            */
 
-            await new Promise((resolve) => setTimeout(resolve, 1500));
+            if (!response.ok) throw new Error('Server error');
 
             messageDiv.innerText = 'הפרטים נשלחו בהצלחה! ניצור קשר בהקדם.';
             messageDiv.className =
